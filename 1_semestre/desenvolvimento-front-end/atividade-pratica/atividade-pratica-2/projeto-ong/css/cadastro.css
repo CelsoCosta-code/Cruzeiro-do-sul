@@ -3,38 +3,38 @@
 ========================================= */
 main {
   flex: 1;
-  max-width: 800px; /* Um pouco mais estreito para formulários fica melhor */
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 800px;
+  margin: var(--espaco-xxl) auto;
+  padding: 0 var(--espaco-lg);
 }
 
 main h1 {
-  color: var(--cor-principal);
-  margin-bottom: 10px;
-  font-size: 2.2rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-sm);
+  font-size: var(--font-h1);
   text-align: center;
 }
 
 main > p {
-  font-size: 1.1rem;
+  font-size: var(--font-p-destaque);
   color: var(--cor-texto-claro);
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: var(--espaco-xxl);
 }
 
 /* Sessão do Formulário */
 section {
   background-color: var(--cor-branca);
-  padding: 40px;
+  padding: var(--espaco-xl);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  margin-bottom: 30px;
+  margin-bottom: var(--espaco-xl);
 }
 
 section h2 {
-  color: var(--cor-principal);
-  margin-bottom: 25px;
-  font-size: 1.6rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-lg);
+  font-size: var(--font-h2);
   text-align: center;
 }
 
@@ -44,94 +44,87 @@ section h2 {
 form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: var(--espaco-lg);
 }
 
 fieldset {
-  border: 1px solid var(--cor-borda);
+  border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 25px;
-  background-color: #fafafa;
+  padding: var(--espaco-lg);
+  background-color: var(--cor-fundo);
 }
 
 legend {
-  color: var(--cor-principal);
+  color: var(--cor-primaria);
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0 10px;
+  font-size: var(--font-p-destaque);
+  padding: 0 var(--espaco-sm);
   background-color: var(--cor-branca);
-  border: 1px solid var(--cor-borda);
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-/* Rótulos (Labels) */
 label {
   display: block;
   font-weight: 500;
-  margin-bottom: 8px;
-  color: var(--cor-texto);
-  margin-top: 15px; /* Espaçamento entre os campos */
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-texto-escuro);
+  margin-top: var(--espaco-md);
+  font-size: var(--font-p);
 }
 
-/* Remove a margem do primeiro label dentro do fieldset */
 fieldset label:first-of-type {
   margin-top: 0;
 }
 
-/* Campos de Texto, Tel e Email */
 input[type="text"],
 input[type="tel"],
 input[type="email"] {
   width: 100%;
-  padding: 12px 15px;
-  border: 1px solid var(--cor-borda);
+  padding: var(--espaco-md);
+  border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: var(--font-p);
   font-family: inherit;
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-/* Efeito ao clicar no campo (Focus) */
 input[type="text"]:focus,
 input[type="tel"]:focus,
 input[type="email"]:focus {
   outline: none;
-  border-color: var(--cor-principal);
-  box-shadow: 0 0 0 3px rgba(25, 83, 95, 0.15); /* Brilho suave ao redor */
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(25, 83, 95, 0.15);
 }
 
-/* Checkboxes */
 input[type="checkbox"] {
   margin-right: 10px;
   transform: scale(1.2);
-  accent-color: var(--cor-principal); /* Pinta o checkbox na cor da ONG */
+  accent-color: var(--cor-primaria);
   cursor: pointer;
 }
 
-/* Estilo específico para os labels dos checkboxes (para ficarem na mesma linha) */
 fieldset:nth-of-type(2) label {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: var(--espaco-sm);
   font-weight: normal;
   cursor: pointer;
 }
 
-/* =========================================
-   Botão de Envio (Caso eu adicione depois)
-========================================= */
+/* Botão de Envio */
 button[type="submit"] {
-  background-color: var(--cor-principal);
+  background-color: var(--cor-terciaria);
   color: var(--cor-branca);
-  padding: 15px 30px;
+  padding: var(--espaco-md) var(--espaco-xl);
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: var(--font-p-destaque);
   font-weight: 600;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: var(--espaco-md);
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
@@ -139,6 +132,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: var(--cor-destaque);
+  background-color: var(
+    --cor-sucesso
+  ); /* Fica verde quando passa o mouse (feedback positivo) */
   transform: translateY(-2px);
 }

@@ -1,53 +1,53 @@
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  color: var(--cor-texto-escuro);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Garante que o rodapé fique no fundo */
+  min-height: 100vh;
 }
 
 /* =========================================
    Conteúdo Principal
 ========================================= */
 main {
-  flex: 1; /* Faz o main crescer e empurrar o footer para baixo */
+  flex: 1;
   max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: var(--espaco-xxl) auto;
+  padding: 0 var(--espaco-lg);
   text-align: center;
 }
 
 main h1 {
-  color: var(--cor-principal);
-  margin-bottom: 20px;
-  font-size: 2.5rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-lg);
+  font-size: var(--font-h1);
   font-weight: 700;
 }
 
 main > p {
-  font-size: 1.2rem;
+  font-size: var(--font-p-destaque);
   color: var(--cor-texto-claro);
-  margin-bottom: 50px;
+  margin-bottom: var(--espaco-xxl);
 }
 
 /* Sessões de conteúdo */
 section {
   background-color: var(--cor-branca);
-  padding: 40px;
+  padding: var(--espaco-xl);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  margin-bottom: 30px;
+  margin-bottom: var(--espaco-xl);
 }
 
 section h2 {
-  color: var(--cor-principal);
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espaco-md);
+  font-size: var(--font-h2);
 }
 
 section p {
   color: var(--cor-texto-claro);
-  font-size: 1.1rem;
+  font-size: var(--font-p);
 }
