@@ -89,3 +89,25 @@ article a:hover {
   background-color: var(--cor-destaque);
   transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
+
+/* =========================================
+   Grid de Projetos (Vitrine)
+========================================= */
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Cria colunas automáticas com mínimo de 280px */
+  gap: 30px; /* Espaço entre os cartões */
+  margin-top: 25px;
+}
+
+/* Pequeno ajuste no article para ele se comportar bem dentro do Grid */
+article {
+  margin-bottom: 0; /* Remove a margem antiga porque agora usamos o 'gap' do grid */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+article a {
+  margin-top: auto; /* Joga o botão sempre para o final do cartão, mantendo-os alinhados */
+}
