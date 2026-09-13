@@ -5,14 +5,33 @@
   box-sizing: border-box;
 }
 
-/* Variáveis com a paleta de cores inspirada na logo */
+/* =========================================
+   DESIGN SYSTEM - VARIÁVEIS GLOBAIS
+========================================= */
 :root {
-  --cor-principal: #19535f; /* Azul petróleo escuro da logo */
-  --cor-fundo: #f8f9fa; /* Off-white elegante */
-  --cor-destaque: #2a798a; /* Tom um pouco mais claro para efeitos visuais */
-  --cor-texto: #333333;
-  --cor-texto-claro: #666666;
-  --cor-branca: #ffffff;
+  /* Paleta de Cores (8 cores distintas) */
+  --cor-primaria: #19535f; /* Azul Petróleo - Transmite confiança */
+  --cor-secundaria: #2a798a; /* Azul Claro - Interações e hover */
+  --cor-terciaria: #f0a500; /* Laranja/Âmbar - Call to Actions (Doações) */
+  --cor-sucesso: #28a745; /* Verde - Confirmações de formulário */
+  --cor-texto-escuro: #333333; /* Cinza Escuro - Textos principais (Alto contraste) */
+  --cor-texto-claro: #666666; /* Cinza Médio - Textos secundários */
+  --cor-fundo: #f8f9fa; /* Off-white - Fundo principal da página */
+  --cor-branca: #ffffff; /* Branco puro - Fundo de cartões e seções */
+
+  /* Tipografia (5 patamares hierárquicos em REM) */
+  --font-h1: 2.5rem; /* 40px - Títulos principais de páginas */
+  --font-h2: 2rem; /* 32px - Títulos de seções */
+  --font-h3: 1.5rem; /* 24px - Títulos de cartões/projetos */
+  --font-p-destaque: 1.125rem; /* 18px - Subtítulos ou parágrafos de destaque */
+  --font-p: 1rem; /* 16px - Texto corrido padrão */
+
+  /* Espaçamentos Modulares (Escala baseada em 8px) */
+  --espaco-sm: 8px; /* Margens internas pequenas */
+  --espaco-md: 16px; /* Espaçamento padrão de textos */
+  --espaco-lg: 24px; /* Espaçamento entre elementos agrupados */
+  --espaco-xl: 32px; /* Padding interno de cartões */
+  --espaco-xxl: 48px; /* Distância entre seções (margins) */
 }
 
 /* =========================================
@@ -32,25 +51,25 @@ header {
 ========================================= */
 @media (max-width: 768px) {
   /* O cabeçalho fica empilhado */
-   header {
+  header {
     flex-direction: column;
     padding: 15px 5%;
     gap: 15px;
   }
 
-   /* Menu se ajusta e cenraliza */
-   nav ul {
+  /* Menu se ajusta e cenraliza */
+  nav ul {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-   }
+  }
 
-   /* Reduz a margem principal para aproveitar o espaço da tela */
-   main {
+  /* Reduz a margem principal para aproveitar o espaço da tela */
+  main {
     margin: 30px auto;
-   }
+  }
 }
- 
+
 header img {
   height: 60px;
   width: auto;
@@ -89,4 +108,3 @@ footer p {
   font-size: 0.95rem;
   opacity: 0.9;
 }
-
