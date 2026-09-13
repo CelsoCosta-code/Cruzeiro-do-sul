@@ -1,7 +1,3 @@
-@import url('global.css');
-
-
-
 /* =========================================
    Conteúdo Principal - Página de Projetos
 ========================================= */
@@ -84,11 +80,12 @@ article a {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 article a:hover {
   background-color: var(--cor-destaque);
   transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
 }
-

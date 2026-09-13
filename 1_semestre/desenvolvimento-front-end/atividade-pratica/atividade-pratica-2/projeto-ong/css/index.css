@@ -1,6 +1,5 @@
-@import url('global.css');
 body {
-  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   line-height: 1.6;
@@ -52,4 +51,3 @@ section p {
   color: var(--cor-texto-claro);
   font-size: 1.1rem;
 }
-
