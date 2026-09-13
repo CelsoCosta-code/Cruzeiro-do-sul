@@ -1,0 +1,68 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variáveis com a paleta de cores inspirada na logo */
+:root {
+  --cor-principal: #19535F; /* Azul petróleo escuro da logo */
+  --cor-fundo: #F8F9FA;     /* Off-white elegante */
+  --cor-destaque: #2A798A;  /* Tom um pouco mais claro para efeitos visuais */
+  --cor-texto: #333333;
+  --cor-texto-claro: #666666;
+  --cor-branca: #FFFFFF;
+}
+
+
+/* =========================================
+   Cabeçalho e Navegação
+========================================= */
+header {
+  background-color: var(--cor-branca);
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+header img {
+  height: 60px;
+  width: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-principal);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cor-destaque);
+}
+
+/* =========================================
+   Rodapé
+========================================= */
+footer {
+  background-color: var(--cor-principal);
+  color: var(--cor-branca);
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: auto;
+}
+
+footer p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
