@@ -10,11 +10,25 @@
   <body>
     <header>
       <img src="img/Ong_esperanca.jpeg" alt="Logo da ONG Esperança" />
+
+      <!-- Checkbox invisível e o ícone de Hambúrguer -->
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <!-- Símbolo ☰ -->
+
       <nav>
-        <ul>
+        <ul class="menu-principal">
           <li><a href="index.html">Início</a></li>
           <li><a href="projetos.html">Projetos</a></li>
-          <li><a href="contato.html">Seja Voluntário</a></li>
+
+          <!-- Item com Dropdown (Menu Suspenso) -->
+          <!-- <li class="dropdown"> -->
+          <!--   <a href="#">Apoie a ONG ▼</a> -->
+          <!--   <ul class="dropdown-conteudo"> -->
+              <li><a href="cadastro.html">Seja Voluntário</a></li>
+              <!-- <li><a href="#">Fazer Doação</a></li> -->
+            </ul>
+          </li>
         </ul>
       </nav>
     </header>

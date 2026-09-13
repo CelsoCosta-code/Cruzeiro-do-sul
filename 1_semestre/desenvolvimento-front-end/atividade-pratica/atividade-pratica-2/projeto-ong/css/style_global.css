@@ -35,7 +35,7 @@
 }
 
 /* =========================================
-   Cabeçalho e Navegação
+   Cabeçalho e Navegação (Desktop)
 ========================================= */
 header {
   background-color: var(--cor-branca);
@@ -51,54 +51,72 @@ header img {
   width: auto;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
+/* Esconde o checkbox e o ícone do hambúrguer no computador */
+#menu-toggle,
+.menu-icon {
+  display: none;
 }
 
-nav a {
+.menu-principal {
+  list-style: none;
+  display: flex;
+  gap: var(--espaco-xl);
+  align-items: center;
+}
+
+.menu-principal a {
   text-decoration: none;
-  color: var(--cor-primaria); /* Corrigido o nome da variável */
+  color: var(--cor-primaria);
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: var(--font-p-destaque);
   transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--cor-secundaria); /* Corrigido o nome da variável */
+.menu-principal a:hover {
+  color: var(--cor-secundaria);
 }
 
 /* =========================================
-   Responsividade (Smartphone e Tablets)
+   Estrutura do Dropdown (Menu Suspenso)
 ========================================= */
-/* Movido para debaixo das regras gerais do header e nav */
-@media (max-width: 768px) {
-  /* O cabeçalho fica empilhado */
-  header {
-    flex-direction: column;
-    padding: 15px 5%;
-    gap: 15px;
-  }
+.dropdown {
+  position: relative; /* O submenu se guia por este item */
+}
 
-  /* Menu se ajusta e centraliza */
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+.dropdown-conteudo {
+  display: none; /* Fica escondido por padrão */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--cor-branca);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  list-style: none;
+  min-width: 200px;
+  padding: var(--espaco-sm) 0;
+  z-index: 100;
+}
 
-  /* Reduz a margem principal para aproveitar o espaço da tela */
-  main {
-    margin: 30px auto;
-  }
+.dropdown-conteudo a {
+  display: block;
+  padding: var(--espaco-md) var(--espaco-lg);
+  font-size: var(--font-p);
+}
+
+.dropdown-conteudo a:hover {
+  background-color: var(--cor-fundo);
+}
+
+/* Interação: Mostra o submenu ao passar o mouse */
+.dropdown:hover .dropdown-conteudo {
+  display: block;
 }
 
 /* =========================================
    Rodapé
 ========================================= */
 footer {
-  background-color: var(--cor-primaria); /* Corrigido o nome da variável */
+  background-color: var(--cor-primaria);
   color: var(--cor-branca);
   text-align: center;
   padding: 25px 20px;
@@ -108,6 +126,63 @@ footer {
 footer p {
   font-size: 0.95rem;
   opacity: 0.9;
+}
+
+/* =========================================
+   Responsividade (Menu Hambúrguer - Mobile)
+========================================= */
+/* IMPORTANTE: Esta media query precisa ficar debaixo do CSS do menu e header para sobrescrevê-los! */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap; /* Permite que o menu desça para a próxima linha */
+    padding: 15px 5%;
+  }
+
+  /* Mostra o ícone de hambúrguer */
+  .menu-icon {
+    display: block;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    cursor: pointer;
+  }
+
+  /* Esconde a navegação inicialmente */
+  nav {
+    width: 100%;
+    display: none;
+    margin-top: var(--espaco-md);
+  }
+
+  .menu-principal {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .menu-principal > li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu-principal a {
+    display: block;
+    padding: var(--espaco-md) 0;
+  }
+
+  /* O TRUQUE: Se o checkbox invisível for marcado, mostra o menu */
+  #menu-toggle:checked ~ nav {
+    display: block;
+  }
+
+  /* Ajuste do dropdown para não flutuar na tela do celular */
+  .dropdown-conteudo {
+    position: relative;
+    box-shadow: none;
+    border: none;
+    background-color: var(--cor-fundo);
+    display: block;
+  }
 }
 
 /* =========================================
@@ -142,7 +217,7 @@ footer p {
     max-width: 720px;
   }
   .item-grid.metade {
-    grid-column: span 6; /* Ocupa 6 colunas (metade da tela) */
+    grid-column: span 6;
   }
 }
 
@@ -152,7 +227,7 @@ footer p {
     max-width: 960px;
   }
   .item-grid.terco {
-    grid-column: span 4; /* Ocupa 4 colunas (1/3 da tela) */
+    grid-column: span 4;
   }
 }
 
@@ -165,6 +240,6 @@ footer p {
 
 @media (min-width: 1400px) {
   .container-grid {
-    max-width: 1320px; /* Limita o crescimento máximo para não esticar demais */
+    max-width: 1320px;
   }
 }
