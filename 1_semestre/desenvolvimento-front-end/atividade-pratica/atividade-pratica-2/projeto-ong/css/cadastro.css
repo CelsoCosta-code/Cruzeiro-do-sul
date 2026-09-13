@@ -137,3 +137,26 @@ button[type="submit"]:hover {
   ); /* Fica verde quando passa o mouse (feedback positivo) */
   transform: translateY(-2px);
 }
+
+/* =========================================
+   Validação Semântica de Formulário
+========================================= */
+/* Quando o campo está preenchido corretamente */
+input:not(:placeholder-shown):valid {
+  border-color: var(--cor-sucesso);
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15);
+}
+
+/* Quando o campo está preenchido, mas com erro (ex: e-mail sem @) */
+input:not(:placeholder-shown):invalid {
+  border-color: #dc3545; /* Vermelho alerta padrão de erro */
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15);
+}
+
+/* Adiciona um ícone de "check" ou "X" dependendo do estado (Opcional, mas muito elegante) */
+input:not(:placeholder-shown):valid {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2328a745"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+}

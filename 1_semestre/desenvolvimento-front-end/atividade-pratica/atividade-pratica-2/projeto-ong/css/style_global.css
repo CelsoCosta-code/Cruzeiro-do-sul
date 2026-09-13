@@ -243,3 +243,79 @@ footer p {
     max-width: 1320px;
   }
 }
+
+/* =========================================
+   Modal de Informação / Alerta Contextual
+========================================= */
+/* Fundo escuro que cobre toda a tela */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  /* Lógica para esconder */
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+/* O TRUQUE: Quando a URL tiver #modal-alerta, ele aparece */
+.modal-overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Caixa branca central do modal */
+.modal-conteudo {
+  background-color: var(--cor-branca);
+  padding: var(--espaco-xxl);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  /* Efeito de surgir de baixo para cima */
+  transform: translateY(50px);
+  transition: transform 0.4s ease;
+}
+
+.modal-overlay:target .modal-conteudo {
+  transform: translateY(0);
+}
+
+.modal-conteudo h2 {
+  color: var(--cor-terciaria);
+  margin-bottom: var(--espaco-md);
+  font-size: var(--font-h2);
+}
+
+.modal-conteudo p {
+  color: var(--cor-texto-escuro);
+  margin-bottom: var(--espaco-xl);
+  font-size: var(--font-p);
+}
+
+.btn-fechar-modal {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--espaco-md) var(--espaco-lg);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-fechar-modal:hover {
+  background-color: var(--cor-secundaria);
+}
