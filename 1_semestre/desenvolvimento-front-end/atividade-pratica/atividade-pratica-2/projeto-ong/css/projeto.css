@@ -104,3 +104,30 @@ article a:hover {
   transform: translateY(-2px);
 }
 
+
+/* =========================================
+   Badges (Etiquetas de Categorização)
+========================================= */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: var(--espaco-md);
+  letter-spacing: 0.5px;
+}
+
+/* Variações Semânticas de Cores */
+.badge-urgente {
+  background-color: #ffeeba;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.badge-aberto {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
