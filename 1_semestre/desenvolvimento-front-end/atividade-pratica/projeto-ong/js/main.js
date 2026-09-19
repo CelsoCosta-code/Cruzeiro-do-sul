@@ -1,10 +1,10 @@
 import { templates } from "./templates.js";
 
-const containeApp = document.getElementById("conteudo-app");
+const containerApp = document.getElementById("conteudo-app");
 
 function carregarPagina(nomeDaPagina) {
   // Injeta o HTML do template correspondente dentro da tag <main>
-  containeApp.innerHTML = templates[nomeDaPagina];
+  containerApp.innerHTML = templates[nomeDaPagina];
 
   // Reativa os eventos de cliques
   atualizarLinksNavegacao();
@@ -30,7 +30,7 @@ function atualizarLinksNavegacao() {
     novoLink.addEventListener("click", function (evento) {
       evento.preventDefault(); // Impede o recarregamento da página
 
-      const paginaAlvo = this.getAttribute("data-pagina");
+      const paginaAlvo = novoLink.getAttribute("data-page");
       carregarPagina(paginaAlvo);
     });
   });
