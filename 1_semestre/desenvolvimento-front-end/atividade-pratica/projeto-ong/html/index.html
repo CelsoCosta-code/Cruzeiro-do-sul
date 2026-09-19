@@ -2,52 +2,42 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Início - ONG Esperança</title>
-    <link href="css/style_global.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ONG Esperança - SPA</title>
+    <link href="../css/style_global.css" rel="stylesheet" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/projeto.css" rel="stylesheet" />
+    <link href="../css/cadastro.css" rel="stylesheet" />
+    <script src="../js/index.js" defer></script>
   </head>
   <body>
     <header>
-      <img src="img/Ong_esperanca.jpeg" alt="Logo da ONG Esperança" />
+      <img src="../img/Ong_esperanca.jpeg" alt="Logo da ONG Esperança" />
 
-      <!-- Checkbox invisível e o ícone de Hambúrguer -->
       <input type="checkbox" id="menu-toggle" />
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
-      <!-- Símbolo ☰ -->
 
       <nav>
         <ul class="menu-principal">
-          <li><a href="index.html">Início</a></li>
-          <li><a href="projetos.html">Projetos</a></li>
-
-          <!-- Item com Dropdown (Menu Suspenso) -->
-          <!-- <li class="dropdown"> -->
-          <!--   <a href="#">Apoie a ONG ▼</a> -->
-          <!--   <ul class="dropdown-conteudo"> -->
-              <li><a href="cadastro.html">Seja Voluntário</a></li>
-              <!-- <li><a href="#">Fazer Doação</a></li> -->
+          <li><a href="#" data-page="inicio" class="link-nav">Início</a></li>
+          <li>
+            <a href="#" data-page="projetos" class="link-nav">Projetos</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">Apoie a ONG ▼</a>
+            <ul class="dropdown-conteudo">
+              <li>
+                <a href="#" data-pagina="cadastro" class="link-nav"
+                  >Seja Voluntário</a
+                >
+              </li>
             </ul>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main>
-      <h1>Transformando Vidas por Meio da Solidariedade</h1>
-      <p>
-        Bem-vindo à ONG Esperança. Nosso propósito é levar dignidade e
-        oportunidades para comunidades em situação de vulnerabilidade.
-      </p>
-
-      <section>
-        <h2>Nossa Missão</h2>
-        <p>
-          Atuar de forma transparente e contínua no combate à fome e na promoção
-          da educação, conectando quem deseja ajudar com quem mais precisa.
-        </p>
-      </section>
-    </main>
+    <main id="conteudo-app"></main>
 
     <footer>
       <p>
