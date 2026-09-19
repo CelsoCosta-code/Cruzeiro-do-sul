@@ -1,4 +1,5 @@
 import { templates } from "./templates.js";
+import { inicializarCadastro } from "./cadastro.js";
 
 const containerApp = document.getElementById("conteudo-app");
 
@@ -14,6 +15,7 @@ function carregarPagina(nomeDaPagina) {
     console.log(
       "Página de cadastro renderizada. Pronta para conecar o LocalStorage",
     );
+    inicializarCadastro(); // Chama a função de inicialização do cadastro
 
     // TODO - Chamaremos a função de validação e salvemento aqui
   }
