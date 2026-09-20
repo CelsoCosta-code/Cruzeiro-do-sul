@@ -14,7 +14,13 @@ export function inicializarCadastro() {
 
     // Validando os campos obrigatórios
     if (!nome || !email || !telefone) {
-      alert("Por favor, preencha todos os campos obrigatórios.");
+      Swal.fire({
+        title: "Falha no Cadastro!",
+        text: "Por favor, preencha todos os campos obrigatórios.",
+        icon: "error", // Ícone corrigido para a palavra reservada
+        confirmButtonText: "Tentar Novamente", // O texto do botão vem para cá
+        confirmButtonColor: "#dc3545",
+      });
       return;
     }
 
@@ -40,6 +46,12 @@ export function inicializarCadastro() {
     // Limpa o formulário após o envio
     formulario.reset();
     // Feedback para o usuário
-    alert("Cadastro realizado com sucesso!");
+    Swal.fire({
+      title: "Falha no Cadastro!",
+      text: "Por favor, preencha todos os campos obrigatórios.",
+      icon: "sucesso", // Ícone corrigido para a palavra reservada
+      confirmButtonText: "Tentar Novamente", // O texto do botão vem para cá
+      confirmButtonColor: "#dc3545",
+    });
   });
 }
