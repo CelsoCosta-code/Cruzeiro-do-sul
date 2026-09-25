@@ -319,3 +319,13 @@ footer p {
 .btn-fechar-modal:hover {
   background-color: var(--cor-secundaria);
 }
+
+/* WCAG 2.1: Destaque de foco claro para navegação por teclado */
+a:focus,
+input:focus,
+button:focus,
+.menu-icon:focus {
+  outline: 3px solid #28a745;
+  outline-offset: 3px;
+  border-radius: 4px;
+}

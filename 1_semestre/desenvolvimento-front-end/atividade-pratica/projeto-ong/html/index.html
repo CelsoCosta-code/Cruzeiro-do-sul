@@ -12,20 +12,31 @@
     <script type="module" src="../js/main.js" defer></script>
   </head>
   <body>
-    <header>
-      <img src="../img/Ong_esperanca.jpeg" alt="Logo da ONG Esperança" />
+    <header role="banner">
+      <img
+        src="../img/Ong_esperanca.jpeg"
+        alt="Logotipo principal da ONG Esperança"
+      />
 
-      <input type="checkbox" id="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <input type="checkbox" id="menu-toggle" aria-hidden="true" />
+      <label
+        for="menu-toggle"
+        class="menu-icon"
+        aria-label="Abrir menu de navegação"
+        tabindex="0"
+        >&#9776;</label
+      >
 
-      <nav>
+      <nav role="navigation" aria-label="Menu principal">
         <ul class="menu-principal">
           <li><a href="#" data-page="inicio" class="link-nav">Início</a></li>
           <li>
             <a href="#" data-page="projetos" class="link-nav">Projetos</a>
           </li>
           <li class="dropdown">
-            <a href="#">Apoie a ONG ▼</a>
+            <a href="#" aria-haspopup="true" aria-expanded="false"
+              >Apoie a ONG ▼</a
+            >
             <ul class="dropdown-conteudo">
               <li>
                 <a href="#" data-page="cadastro" class="link-nav"
