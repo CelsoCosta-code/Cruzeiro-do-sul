@@ -25,3 +25,13 @@ A aplicação adota uma arquitetura descentralizada para garantir manutenção e
 2. Abra o diretório raiz do projeto no seu editor de código (recomendado: VS Code).
 3. **Nota sobre CORS:** Devido à utilização de ES6 Modules nativos, o arquivo `index.html` não deve ser aberto diretamente pelo sistema de arquivos (`file://`). Utilize um servidor local, como a extensão _Live Server_ ou via terminal (`python3 -m http.server`).
 4. Acesse o endereço correspondente no navegador (ex: `http://localhost:5500` ou `http://localhost:8000`).
+
+## Padrões de Versionamento e Contribuição
+
+Na sua fase inicial de estruturação (MVP), o desenvolvimento ocorreu de forma linear na branch `main`. Atualmente, para garantir a estabilidade do código em produção, o repositório evoluiu e adota o padrão **GitFlow**:
+
+- **main:** Branch protegida, atuando exclusivamente como espelho do ambiente de produção.
+- **develop:** Espinha dorsal do desenvolvimento e ambiente de integração contínua.
+- **feature/**: Ramificações efêmeras e isoladas para novas implementações (ex: `feature/acessibilidade`).
+
+O histórico de alterações é mantido através de **Conventional Commits** (ex: `feat:`, `fix:`, `docs:`) e o sistema de releases segue as diretrizes de **Versionamento Semântico (SemVer)**.
